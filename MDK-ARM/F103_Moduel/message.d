@@ -1,0 +1,15 @@
+f103_moduel\message.o: ..\smartdevice\smarthome\message.c
+f103_moduel\message.o: D:\Tool_Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+f103_moduel\message.o: D:\Tool_Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+f103_moduel\message.o: ../smartdevice/input/input_buffer.h
+f103_moduel\message.o: ../smartdevice/input/input_system.h
+f103_moduel\message.o: ../smartdevice/device/led_device.h
+f103_moduel\message.o: ../smartdevice/device/fan_device.h
+f103_moduel\message.o: ../smartdevice/device/display/display_system.h
+f103_moduel\message.o: ../smartdevice/device/display/display_device.h
+f103_moduel\message.o: ../smartdevice/fonts/font_system.h
+f103_moduel\message.o: ../smartdevice/fonts/font_manager.h
+f103_moduel\message.o: ../smartdevice/text/show_text.h
+f103_moduel\message.o: ../smartdevice/net/net_system.h
+f103_moduel\message.o: ../smartdevice/net/net_device.h
+f103_moduel\message.o: ../smartdevice/input/gpio_key.h
