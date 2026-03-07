@@ -10,6 +10,8 @@
 #define PASSWORD    "12345678"
 
 #define LOCAL_PORT  1234
+#define REMOTE_IP   "172.20.10.2"
+#define REMOTE_PORT 8080
 #define VERSION  "V1.0 From 100ASK"
 
 

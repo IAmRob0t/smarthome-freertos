@@ -385,9 +385,12 @@ static unsigned short LM393_ReadAO(void)
 void DHT11_UpdateValue(void)
 {
     PDHT11Dev dht11 = GetDHT11Device(1);
+	PNetDevice pNetDev = NULL;
 	int err;
 	int light_state;
 	unsigned short light_adc;
+	char payload[64];
+	int payload_len;
 
     /* 初始化DHT11设备 */
     dht11->DevInit(dht11);
@@ -401,9 +404,25 @@ void DHT11_UpdateValue(void)
 
 		if (!err)
 		{	
+			if (!pNetDev)
+			{
+				pNetDev = GetNetDevice("esp8266");
+			}
+
 			light_state = LM393_GetLightState();
 			light_adc = LM393_ReadAO();
 		    printf("T=%d,H=%d,L=%d,A=%u\r\n", dht11->value.temperature, dht11->value.humidity, light_state, light_adc);
+
+			payload_len = snprintf(payload, sizeof(payload),
+				"{\"T\":%d,\"H\":%d,\"L\":%d,\"AQ\":%u}",
+				dht11->value.temperature,
+				dht11->value.humidity,
+				light_state,
+				light_adc);
+			if (pNetDev && payload_len > 0)
+			{
+				pNetDev->Send(pNetDev, "udp", NULL, 0, (unsigned char *)payload, payload_len);
+			}
 		}
 	    //KAL_Delay(5000);
 	    vTaskDelay(5000);

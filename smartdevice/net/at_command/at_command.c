@@ -302,4 +302,79 @@ int ATDataRecv(unsigned char *Data, int *piLen, int iTimeoutMS)
 	
 }
 
+int ATDataSend(unsigned char *Data, int iLen, int iTimeoutMS)
+{
+	char cmd[32];
+	char c;
+	char resp[64];
+	int resp_len = 0;
+	int pre;
+	int now;
+
+	if (!Data || iLen <= 0)
+		return -1;
+
+	sprintf(cmd, "AT+CIPSEND=%d", iLen);
+	g_ptATIntfDev->InvalidRecvBuf(g_ptATIntfDev);
+	g_ptATIntfDev->Write(g_ptATIntfDev, cmd, strlen(cmd));
+	g_ptATIntfDev->Write(g_ptATIntfDev, "\r\n", 2);
+
+	pre = KAL_GetTime();
+	while (iTimeoutMS)
+	{
+		if (g_ptATIntfDev->ReadByte(g_ptATIntfDev, &c) == 0)
+		{
+			if (c == '>')
+			{
+				break;
+			}
+		}
+
+		now = KAL_GetTime();
+		if (now > pre)
+		{
+			iTimeoutMS--;
+			pre = now;
+		}
+	}
+
+	if (!iTimeoutMS)
+		return -2;
+
+	g_ptATIntfDev->Write(g_ptATIntfDev, (char *)Data, iLen);
+
+	pre = KAL_GetTime();
+	while (iTimeoutMS)
+	{
+		if (g_ptATIntfDev->ReadByte(g_ptATIntfDev, &c) == 0)
+		{
+			if (resp_len < (int)sizeof(resp) - 1)
+			{
+				resp[resp_len++] = c;
+				resp[resp_len] = '\0';
+			}
+			else
+			{
+				memmove(resp, resp + 1, sizeof(resp) - 2);
+				resp[sizeof(resp) - 2] = c;
+				resp[sizeof(resp) - 1] = '\0';
+			}
+
+			if (strstr(resp, "SEND OK"))
+				return 0;
+			if (strstr(resp, "ERROR") || strstr(resp, "FAIL"))
+				return -1;
+		}
+
+		now = KAL_GetTime();
+		if (now > pre)
+		{
+			iTimeoutMS--;
+			pre = now;
+		}
+	}
+
+	return -2;
+}
+
 

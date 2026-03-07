@@ -57,6 +57,8 @@ int ATCommandSendAndRecv(char *cmd, char *pcRecvBuf, int iTimeoutMS);
  ***********************************************************************/
 int ATDataRecv(unsigned char *Data, int *piLen, int iTimeoutMS);
 
+int ATDataSend(unsigned char *Data, int iLen, int iTimeoutMS);
+
 
 #endif /* __NET_SYSTEM_H */
 
