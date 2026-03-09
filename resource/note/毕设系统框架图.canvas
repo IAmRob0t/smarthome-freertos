@@ -1,0 +1,228 @@
+{
+  "nodes": [
+    {
+      "id": "a1b2c3d4e5f60718",
+      "type": "group",
+      "x": -1220,
+      "y": -120,
+      "width": 340,
+      "height": 420,
+      "label": "感知层 Sensors",
+      "color": "3"
+    },
+    {
+      "id": "b2c3d4e5f6071829",
+      "type": "group",
+      "x": -820,
+      "y": -200,
+      "width": 620,
+      "height": 580,
+      "label": "控制层 Controller",
+      "color": "4"
+    },
+    {
+      "id": "c3d4e5f60718293a",
+      "type": "group",
+      "x": -140,
+      "y": -80,
+      "width": 260,
+      "height": 260,
+      "label": "网络层 Network",
+      "color": "5"
+    },
+    {
+      "id": "d4e5f60718293a4b",
+      "type": "group",
+      "x": 180,
+      "y": -80,
+      "width": 320,
+      "height": 260,
+      "label": "应用层 App",
+      "color": "6"
+    },
+    {
+      "id": "e5f60718293a4b5c",
+      "type": "text",
+      "x": -1180,
+      "y": -70,
+      "width": 260,
+      "height": 90,
+      "text": "DHT11\n温湿度采集"
+    },
+    {
+      "id": "f60718293a4b5c6d",
+      "type": "text",
+      "x": -1180,
+      "y": 40,
+      "width": 260,
+      "height": 100,
+      "text": "LM393\n光照采集\nDO阈值 + AO采样"
+    },
+    {
+      "id": "0718293a4b5c6d7e",
+      "type": "text",
+      "x": -1180,
+      "y": 160,
+      "width": 260,
+      "height": 100,
+      "text": "MQ-135\n空气质量采集\nAO采样"
+    },
+    {
+      "id": "18293a4b5c6d7e8f",
+      "type": "text",
+      "x": -760,
+      "y": -120,
+      "width": 260,
+      "height": 120,
+      "text": "DHT11_UpdateValue 任务\n周期采集 + 组包上报"
+    },
+    {
+      "id": "293a4b5c6d7e8f90",
+      "type": "text",
+      "x": -760,
+      "y": 20,
+      "width": 260,
+      "height": 120,
+      "text": "SmartHomeTask 任务\n网络指令解析 + 设备控制"
+    },
+    {
+      "id": "3a4b5c6d7e8f9011",
+      "type": "text",
+      "x": -460,
+      "y": -50,
+      "width": 220,
+      "height": 90,
+      "text": "STM32F103\nFreeRTOS"
+    },
+    {
+      "id": "4b5c6d7e8f901122",
+      "type": "text",
+      "x": -760,
+      "y": 170,
+      "width": 260,
+      "height": 90,
+      "text": "执行器\nLED1/LED2/FAN"
+    },
+    {
+      "id": "5c6d7e8f90112233",
+      "type": "text",
+      "x": -460,
+      "y": 120,
+      "width": 220,
+      "height": 80,
+      "text": "OLED\n本地显示"
+    },
+    {
+      "id": "6d7e8f9011223344",
+      "type": "text",
+      "x": -90,
+      "y": -20,
+      "width": 160,
+      "height": 90,
+      "text": "ESP8266\nUDP"
+    },
+    {
+      "id": "7e8f901122334455",
+      "type": "text",
+      "x": 230,
+      "y": -20,
+      "width": 220,
+      "height": 90,
+      "text": "PC 端 udp_gui\n监控 + 远程控制"
+    },
+    {
+      "id": "8f90112233445566",
+      "type": "text",
+      "x": -820,
+      "y": 320,
+      "width": 1320,
+      "height": 180,
+      "text": "关键链路\n1) 周期上报: {\"T\":..,\"H\":..,\"L\":..,\"AQ\":..}\n2) 远程控制: {\"dev\":\"lamp1\",\"status\":\"1\"}\n3) 典型配置: LOCAL_PORT=1234, REMOTE_PORT=8080, GUI监听=0.0.0.0:8080"
+    }
+  ],
+  "edges": [
+    {
+      "id": "9011223344556677",
+      "fromNode": "e5f60718293a4b5c",
+      "fromSide": "right",
+      "toNode": "18293a4b5c6d7e8f",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "a011223344556677",
+      "fromNode": "f60718293a4b5c6d",
+      "fromSide": "right",
+      "toNode": "18293a4b5c6d7e8f",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "b122334455667788",
+      "fromNode": "0718293a4b5c6d7e",
+      "fromSide": "right",
+      "toNode": "18293a4b5c6d7e8f",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "c233445566778899",
+      "fromNode": "18293a4b5c6d7e8f",
+      "fromSide": "right",
+      "toNode": "3a4b5c6d7e8f9011",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "d3445566778899aa",
+      "fromNode": "293a4b5c6d7e8f90",
+      "fromSide": "right",
+      "toNode": "3a4b5c6d7e8f9011",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e45566778899aabb",
+      "fromNode": "3a4b5c6d7e8f9011",
+      "fromSide": "left",
+      "toNode": "4b5c6d7e8f901122",
+      "toSide": "right",
+      "toEnd": "arrow",
+      "label": "控制"
+    },
+    {
+      "id": "f566778899aabbcc",
+      "fromNode": "3a4b5c6d7e8f9011",
+      "fromSide": "bottom",
+      "toNode": "5c6d7e8f90112233",
+      "toSide": "top",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "06778899aabbccdd",
+      "fromNode": "3a4b5c6d7e8f9011",
+      "fromSide": "right",
+      "toNode": "6d7e8f9011223344",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "178899aabbccddee",
+      "fromNode": "6d7e8f9011223344",
+      "fromSide": "right",
+      "toNode": "7e8f901122334455",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "上报 RX"
+    },
+    {
+      "id": "2899aabbccddeeff",
+      "fromNode": "7e8f901122334455",
+      "fromSide": "left",
+      "toNode": "6d7e8f9011223344",
+      "toSide": "right",
+      "toEnd": "arrow",
+      "label": "控制 TX"
+    }
+  ]
+}

@@ -170,7 +170,7 @@ class UdpGuiApp:
         cards = tk.Frame(panel, bg=Palette.PANEL)
         cards.pack(fill="x", pady=(10, 8))
 
-        card_defs = [("T", "温度", "°C"), ("H", "湿度", "%RH"), ("L", "光照", "0/1"), ("AQ", "空气质量", "ADC")]
+        card_defs = [("T", "温度", "°C"), ("H", "湿度", "%RH"), ("L", "光照状态", "0/1"), ("AQ", "空气质量", "ADC")]
         for idx, (key, title, unit) in enumerate(card_defs):
             card = tk.Frame(cards, bg=Palette.CARD, padx=10, pady=10, highlightthickness=1, highlightbackground="#304357")
             card.grid(row=0, column=idx, sticky="nsew", padx=(0, 8 if idx < 3 else 0))

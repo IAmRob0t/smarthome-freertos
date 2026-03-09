@@ -81,7 +81,7 @@ void Error_Handler(void);
 #define USART1_RX_Pin GPIO_PIN_10
 #define USART1_RX_GPIO_Port GPIOA
 #define LM393_DO_Pin GPIO_PIN_2
-#define LM393_DO_GPIO_Port GPIOE
+#define LM393_DO_GPIO_Port GPIOC
 #define LM393_AO_Pin GPIO_PIN_1
 #define LM393_AO_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */

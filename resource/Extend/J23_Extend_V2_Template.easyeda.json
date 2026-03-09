@@ -1,0 +1,40 @@
+{
+  "docType": "1",
+  "head": {
+    "docType": "1",
+    "editorVersion": "6.5.37",
+    "x": "400",
+    "y": "300",
+    "c_para": {
+      "title": "J23_Extend_V2_Simple",
+      "author": "codex"
+    }
+  },
+  "canvas": "CA~1600~1000~#FFFFFF~yes~#CCCCCC~10~1600~1000~line~10~pixel~5~400~300",
+  "shape": [
+    "T~L~80~70~0~#000080~~14pt~bold~normal~~comment~J23 Extension V2 Simple (1x8 -> two 1x4)~1~start~gge1",
+    "R~70~120~~~360~520~#333333~1~0~none~gge2",
+    "T~L~90~150~0~#000000~~11pt~normal~normal~~comment~Main Board: J23 (1x8)~1~start~gge3",
+    "T~L~90~200~0~#000000~~10pt~normal~normal~~comment~J23.2 = 3V3~1~start~gge4",
+    "T~L~90~240~0~#000000~~10pt~normal~normal~~comment~J23.3 = GND~1~start~gge5",
+    "T~L~90~280~0~#000000~~10pt~normal~normal~~comment~J23.6 = PA1~1~start~gge6",
+    "T~L~90~320~0~#000000~~10pt~normal~normal~~comment~J23.7 = PC2~1~start~gge7",
+    "R~520~120~~~460~520~#333333~1~0~none~gge8",
+    "T~L~540~150~0~#000000~~11pt~normal~normal~~comment~Extension Board~1~start~gge9",
+    "T~L~540~210~0~#000000~~10pt~normal~normal~~comment~HDR_MQ135 (1x4): 3V3 GND SIG NC~1~start~gge10",
+    "T~L~540~360~0~#000000~~10pt~normal~normal~~comment~HDR_LM393 (1x4): 3V3 GND SIG NC~1~start~gge11",
+    "L~430~200~520~200~#f4a261~2~0~none~gge12",
+    "N~430~200~0~#f4a261~3V3 -> HDR_MQ135.1~gge13~start~434~196~Arial~9pt",
+    "L~430~240~520~240~#f4a261~2~0~none~gge14",
+    "N~430~240~0~#f4a261~3V3 -> HDR_LM393.1~gge15~start~434~236~Arial~9pt",
+    "L~430~280~520~280~#1d3557~2~0~none~gge16",
+    "N~430~280~0~#1d3557~GND -> both headers pin2~gge17~start~434~276~Arial~9pt",
+    "L~430~320~520~320~#2a9d8f~2~0~none~gge18",
+    "N~430~320~0~#2a9d8f~PA1 -> HDR_MQ135.3~gge19~start~434~316~Arial~9pt",
+    "L~430~360~520~360~#6a4c93~2~0~none~gge20",
+    "N~430~360~0~#6a4c93~PC2 -> HDR_LM393.3~gge21~start~434~356~Arial~9pt",
+    "T~L~540~440~0~#000000~~10pt~normal~normal~~comment~Pin4 of both 1x4 headers: NC~1~start~gge22"
+  ],
+  "title": "J23_Extend_V2_Simple",
+  "dataStr": {}
+}
